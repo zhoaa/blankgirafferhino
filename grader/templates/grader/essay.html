@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Essay Analysis</li>
+{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Your percentage score: {{ essay.score }}</h1>
+        
+        <hr class="my-4">
+        <p>Your essay had a semantic similarity rate of {{essay.semantic}}. The higher the better! This tests how related each sentence in your essay was!</p>
+		<p>Your essay had a writing accuracy percentage of {{essay.accuracy}} (spelling and grammar).</p>
+		<p>Your essay had {{essay.wordcount}} words.</p>
+		<p>Your essay was {{essay.tense}} percent the same tense.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+
+    <div class="container">
+            <h2 class="display-4">Your Submission</h2>
+            <p class="text-justify">{{ essay.content }}</p>
+        </div>
+{% endblock %}
